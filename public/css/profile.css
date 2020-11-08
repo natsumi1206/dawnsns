@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+
+
+.profile_wrapper,.search_form{
+  padding: 30px 40px;
+  border-radius: 50px;
+  border: 1px solid #d3d3d3;
+  margin-bottom: 10px;
+}
+
+.image-circle.profile_image{
+  width: 100px;
+  height: 100px;
+}
+
+.profile_icon_ather{
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.profile_ather{
+  display: flex;
+  justify-content: flex-start;
+  vertical-align: middle;
+}
+
+.profile_flex{
+  margin: 0 0 0 20px;
+}
+
+.profile_tit{
+  font-weight: bold;
+  text-align: right;
+}
+
+.profile_bio{
+  width: 550px;
+}
+
+.profile_if{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+
+
+
+
+/* プロフィール更新 */
+
+.profile_edit,.pass_edit,.search_wrapper{
+  width: 100%;
+  padding: 30px 40px;
+}
+
+.pass_edit{
+  margin: 0 auto;
+  width: 580px;
+}
+
+.pass_back{
+  padding: 30px 40px;
+}
+
+.profile_edit_flex{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.now_icon{
+  padding: 5px 20px 0 60px;
+  text-align: center;
+}
+
+.edit_form{
+  padding: 0 0 0 60px;
+}
+
+.pro_edit_form-group{
+  padding-bottom: 10px;
+}
+
+.profile_edit_btn{
+  display: block;
+  width: auto;
+  margin: 0 0 0 auto;
+}
+
+.pass{
+  width: auto;
+  margin: 0 0 0 auto;
+}
+
+
+
+/* 検索画面 */
+.search_input{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.search_submit{
+  margin: 10px;
+}
+
+.search_word{
+  width: 200px;
+  height: 30px;
+  margin: 0 0 0 auto;
+  border-bottom: 1px solid #696969;
+}
+
+.userIndex{
+  width: 100%;
+  padding: 30px 40px;
+}
+
+.users{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  padding: 10px 0;
+  margin: 0 auto;
+}
+
+.search_image{
+  width: 80px;
+  height: 80px;
+}
+
+.users_username{
+  margin-left: 20px;
+  font-size: 1.6rem;
+  color: #000;
+  vertical-align: middle;
+}
+
+.follow_button{
+  margin: 0 0 0 auto;
+}
