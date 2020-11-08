@@ -16,14 +16,7 @@ class FollowsTableSeeder extends Seeder
             'user_id' => '1',
             'follow_id' => '2'
           ],
-          [
-            'user_id' => '1',
-            'follow_id' => '3'
-          ],
-          [
-            'user_id' => '3',
-            'follow_id' => '1'
-          ],
+          
         ]);
     }
 }
