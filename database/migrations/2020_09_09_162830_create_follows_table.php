@@ -34,7 +34,7 @@ class CreateFollowsTable extends Migration
           ->onUpdate('cascade');
 
         // 組み合わせのダブりを禁止（二重フォローにならないように）
-        $table->unique(['user_id', 'follow_id']);
+        // $table->unique(['user_id', 'follow_id']);
       });
 
     }
