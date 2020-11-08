@@ -24,13 +24,13 @@ class CreateFollowsTable extends Migration
         $table->foreign('user_id')
           ->references('id')
           ->on('users')
-          // ->onDelete('cascade')
+          ->onDelete('cascade')
           ->onUpdate('cascade');
 
         $table->foreign('follow_id')
           ->references('id')
           ->on('users')
-          // ->onDelete('cascade')
+          ->onDelete('cascade')
           ->onUpdate('cascade');
 
         // 組み合わせのダブりを禁止（二重フォローにならないように）
