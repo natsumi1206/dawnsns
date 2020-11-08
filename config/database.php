@@ -80,11 +80,11 @@ return [
 
         'dawnSNS' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST_DAWN', '127.0.0.1', 'rtzsaka6vivj2zp1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306'),
+            'host' => env('DB_HOST_DAWN', '127.0.0.1'),
             'port' => env('DB_PORT_DAWN', '3306'),
-            'database' => env('DB_DATABASE_DAWN', 'homestead2', 'jf92btdsmsav10t6'),
-            'username' => env('DB_USERNAME_DAWN', 'root', 'qnwccwranbr7k2o3'),
-            'password' => env('DB_PASSWORD_DAWN', 'secret', 'kwuyep5hnuh72t95'),
+            'database' => env('DB_DATABASE_DAWN', 'homestead2'),
+            'username' => env('DB_USERNAME_DAWN', 'root'),
+            'password' => env('DB_PASSWORD_DAWN', 'secret'),
             'unix_socket' => env('DB_SOCKET_DAWN', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
