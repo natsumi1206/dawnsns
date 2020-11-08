@@ -12,7 +12,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
 
-        DB::connection('dawnSNS')->table('users')->insert([
+        DB::connection('mysql')->table('users')->insert([
           [
             'username' => 'なつみ',
             'mail'     => 'natsumi@gmail.com',
