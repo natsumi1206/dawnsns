@@ -14,7 +14,7 @@ class FollowsTableSeeder extends Seeder
         DB::connection('mysql')->table('follows')->insert([
 
           [
-            'folluw_id' => '1',
+            'follow_id' => '1',
             'user_id' => '3'
           ],
 
