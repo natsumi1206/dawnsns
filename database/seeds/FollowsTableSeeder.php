@@ -12,15 +12,12 @@ class FollowsTableSeeder extends Seeder
     public function run()
     {
         DB::connection('mysql')->table('follows')->insert([
-          
+
           [
             'user_id' => '1',
             'follow_id' => '3'
           ],
-          [
-            'user_id' => '3',
-            'follow_id' => '1'
-          ],
+          
         ]);
     }
 }
