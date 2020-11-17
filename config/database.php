@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'dawnSNS'),
+    'default' => env('DB_CONNECTION_DAWN', 'dawnSNS'),
 
     /*
     |--------------------------------------------------------------------------

@@ -170,6 +170,7 @@ class UsersController extends Controller
       $user->username = $request->input('username');
       $user->mail = $request->input('mail');
       $user->bio = $request->input('bio');
+      // $user->images = base64_encode(file_get_contents($request->input('images')));
       $user->images = $request->input('images');
       $images = $request->input('images');
       //不要なtokenの削除

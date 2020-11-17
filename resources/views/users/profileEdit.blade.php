@@ -12,7 +12,7 @@
   <div class="profile_edit_flex">
     <div class="now_icon">
       <p>
-        <img class="image-circle profile_image" src="{{ asset('images/' . Auth::user()->images ) }}" alt="ユーザーアイコン">
+        <img class="image-circle profile_image" src="data:image/png;base64, {{ Auth::user()->images }}" alt="ユーザーアイコン">
       </p>
       <p>現在のアイコン</p>
     </div>
