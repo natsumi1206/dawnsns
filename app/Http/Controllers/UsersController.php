@@ -42,33 +42,6 @@ class UsersController extends Controller
       ]);
     }
 
-
-
-    // フォロー数フォロワー数　➡️app/Providers/AppServiceProvidに記述
-    // View Composerを使用することで、ルーティングなしで関数を使用できる。
-    // 以下は親ビューファイルのサイドバーで全ページ共通で使用するのでViewComposerを使用する
-    // public function countFollows()
-    // {
-    //   $userId = Auth::user()->id;
-    //   $count_followings = \DB::connection('dawnSNS')
-    //     ->table('follows')
-    //     ->where('user_id', '=', $userId)
-    //     ->count();
-    //
-    //   $count_followers = \DB::connection('dawnSNS')
-    //     ->table('follows')
-    //     ->select('follow_id')
-    //     ->where('follow_id', '=', $userId)
-    //     ->count();
-    //
-    //   return view('layouts.login', [
-    //     'count_followings' => $count_followings,
-    //     'count_followers' => $count_followers
-    //   ]);
-    // }
-
-
-
     //フォロー一覧
     public function followings()
     {
