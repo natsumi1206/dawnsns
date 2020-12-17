@@ -11,7 +11,7 @@ class FollowsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::connection('dawnSNS')->table('follows')->insert([
+        DB::table('follows')->insert([
           [
             'user_id' => '1',
             'follow_id' => '2'

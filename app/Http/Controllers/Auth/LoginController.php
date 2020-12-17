@@ -51,7 +51,7 @@ class LoginController extends Controller
 
         if($request->isMethod('post')){
           $rules = [
-            'mail' => 'required|exists:dawnSNS.users',
+            'mail' => 'required|exists:users',
             'password' => 'required|min:4|max:12|alpha_num',
           ];
 

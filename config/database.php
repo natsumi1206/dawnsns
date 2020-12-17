@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION_DAWN', 'dawnSNS'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -76,22 +76,7 @@ return [
             'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
-        ],
-
-        'dawnSNS' => [
-            'driver' => 'mysql',
-            'host' => env('DB_HOST_DAWN', '127.0.0.1'),
-            'port' => env('DB_PORT_DAWN', '3306'),
-            'database' => env('DB_DATABASE_DAWN', 'homestead2'),
-            'username' => env('DB_USERNAME_DAWN', 'root'),
-            'password' => env('DB_PASSWORD_DAWN', 'secret'),
-            'unix_socket' => env('DB_SOCKET_DAWN', ''),
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
-            'strict' => true,
-            'engine' => null,
-        ],
+        ]
 
     ],
 

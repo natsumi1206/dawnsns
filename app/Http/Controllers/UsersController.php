@@ -79,12 +79,16 @@ class UsersController extends Controller
       $user = User::find($id);
       $followers = $user->followers()->get()->all();
 
+      // $posts = User::with('posts')
+      //   ->where('posts.user_id', $user->followers()->pluck('user_id'))
+      //   ->orderBy('created_at', 'desc')
+      //   ->get();
       $posts = User::query()
         ->join('posts','user_id', '=', 'users.id')
-        ->whereIn('user_id', Auth::user()->followers()->pluck('user_id'))
+        ->where('user_id', $authUser->followers()->pluck('user_id'))
         ->orderBy('posts.created_at', 'desc')
         ->get();
-        // dd($posts);
+        dd($posts);
 
         $data = [
             'user' => $user,

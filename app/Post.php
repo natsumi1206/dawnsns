@@ -17,17 +17,10 @@ class Post extends Model
     ];
 
 
-    /**
-    * The table associated with the model.
-    *
-    * @var string
-    */
-    protected $connection = 'dawnSNS';
-
     //Userモデルに1対多リレーションを定義
     public function user()
     {
-      return $this->belongsTo(User::class, 'user_id', 'id');
+      return $this->belongsTo(User::class);
     }
 
     //Followモデルに1対多リレーションを定義
@@ -35,8 +28,6 @@ class Post extends Model
     {
       return $this->belongsTo(Follow::class, 'user_id', 'follow_id');
     }
-
-  
 
 
 
