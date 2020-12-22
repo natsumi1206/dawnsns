@@ -107,7 +107,7 @@ class RegisterController extends Controller
     }
 
     public function addedUser(){
-      $list = \DB::table('users')->orderBy('id', 'desc')->first();
+      $list = User::orderBy('id', 'desc')->first();
       return view('auth.added', ['list' => $list]);
     }
 
