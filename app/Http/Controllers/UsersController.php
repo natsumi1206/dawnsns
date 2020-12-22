@@ -49,7 +49,6 @@ class UsersController extends Controller
       $user = User::find($id);
 
       $followings = $user->followings()->get()->all();
-      // dd($followings);
 
       //フォロー中のユーザーの投稿を取得
       $posts = User::query()
@@ -57,7 +56,6 @@ class UsersController extends Controller
         ->whereIn('user_id', Auth::user()->followings()->pluck('follow_id'))
         ->orderBy('posts.created_at', 'desc')
         ->get();
-        // dd($posts);
 
         $data = [
             'user' => $user,
@@ -66,7 +64,6 @@ class UsersController extends Controller
         ];
 
         $data += $this->counts($user);
-        // dd($followings);
 
 
         return view('follows.followList', $data);
@@ -79,12 +76,15 @@ class UsersController extends Controller
       $user = User::find($id);
       $followers = $user->followers()->get()->all();
 
+      // $posts = User::with('posts')
+      //   ->where('posts.user_id', $user->followers()->pluck('user_id'))
+      //   ->orderBy('created_at', 'desc')
+      //   ->get();
       $posts = User::query()
         ->join('posts','user_id', '=', 'users.id')
-        ->whereIn('user_id', Auth::user()->followers()->pluck('user_id'))
+        ->where('user_id', $authUser->followers()->pluck('user_id'))
         ->orderBy('posts.created_at', 'desc')
         ->get();
-        // dd($posts);
 
         $data = [
             'user' => $user,
@@ -106,14 +106,12 @@ class UsersController extends Controller
 
       $user = User::query()->where('id', $id)->first();
       $user_id = Auth::id();
-      // dd($user);
       $post = User::query()
       ->join('posts','user_id', '=', 'users.id')
       ->where('user_id', $id)
       ->orderBy('posts.created_at', 'desc')
       ->get()
       ->all();
-      // dd($post);
 
 
       return view('users.profile', [ 'user' => $user, 'post' =>$post, 'user_id' =>$user_id]);
@@ -154,7 +152,6 @@ class UsersController extends Controller
         $user_img = User::query()
           ->where('id', Auth::id())
           ->value('images');//valueメソッドでカラムの値を直接返す
-          // dd($user_img);
         $user->images = $user_img;
         $user->save();
       }

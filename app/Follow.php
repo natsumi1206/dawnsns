@@ -27,12 +27,6 @@ class Follow extends Model
 
     // public $timestamps = false;
     // public $incrementing = false;
-    /**
-    * The table associated with the model.
-    *
-    * @var string
-    */
-    protected $connection = 'dawnSNS';
 
 
 }

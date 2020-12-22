@@ -11,7 +11,7 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::connection('dawnSNS')->table('posts')->insert([
+        DB::table('posts')->insert([
           [
             'user_id' => '1',
             'post' => 'はじめまして。私はなつみです。'

@@ -17,8 +17,7 @@ class AppServiceProvider extends ServiceProvider
     {
         View::composer('layouts.login', function($view){
           $userId = Auth::user()->id;
-          $count_followings = \DB::connection('dawnSNS')
-            ->table('follows')
+          $count_followings = \DB::table('follows')
             ->where('user_id', '=', $userId)
             ->count();
 
@@ -27,8 +26,7 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer('layouts.login', function($view){
           $userId = Auth::user()->id;
-          $count_followers = \DB::connection('dawnSNS')
-            ->table('follows')
+          $count_followers = \DB::table('follows')
             ->select('follow_id')
             ->where('follow_id', '=', $userId)
             ->count();

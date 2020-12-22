@@ -37,15 +37,12 @@ class User extends Authenticatable
     */
     // protected $table = 'users';
     //database.phpでつくったconnection名を追加することで、データベースに接続できる
-    protected $connection = 'dawnSNS';
 
     protected $primaryKey = 'id';
 
-  
-
 
     //Postモデルに1対多リレーションを定義
-    public function post()
+    public function posts()
     {
       return $this->hasMany(Post::class);
     }

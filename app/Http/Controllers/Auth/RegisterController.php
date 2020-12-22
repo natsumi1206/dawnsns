@@ -84,7 +84,7 @@ class RegisterController extends Controller
     {
       $rules = [
         'username' => 'required|string|max:12',
-        'mail' => 'required|string|min:4|email|unique:dawnSNS.users,mail',
+        'mail' => 'required|string|min:4|email|unique:users,mail',
         'password' => 'required|string|min:4|max:12|regex:/^[a-zA-Z0-9]+$/|confirmed',
         'password_confirmation' => 'required',
       ];
@@ -107,7 +107,7 @@ class RegisterController extends Controller
     }
 
     public function addedUser(){
-      $list = \DB::connection('dawnSNS')->table('users')->orderBy('id', 'desc')->first();
+      $list = \DB::table('users')->orderBy('id', 'desc')->first();
       return view('auth.added', ['list' => $list]);
     }
 
