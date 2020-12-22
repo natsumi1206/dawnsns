@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
           $table->string('password',255);
           $table->string('remember_token',255)->nullable();
           $table->string('bio',400)->nullable();
-          $table->string('images',255)->default('dawn.png')->nullable();
+          $table->string('images', 1000)->default('dawn.png')->nullable();
           $table->timestamp('created_at')->useCurrent();
           $table->timestamp('updated_at')->default(DB::raw('current_timestamp on update current_timestamp'));
       });
