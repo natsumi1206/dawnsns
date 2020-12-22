@@ -36,13 +36,6 @@ Route::get('/added', 'Auth\RegisterController@addedUser');
 Route::get('/logout', 'Auth\LoginController@logout');
 
 
-Route::get('/test', 'HomeController@test');
-
-
-
-
-
-
 //ログイン中のページ
 
 //トップページ
