@@ -34,6 +34,8 @@ Route::get('/added', 'Auth\RegisterController@added');
 Route::get('/added', 'Auth\RegisterController@addedUser');
 
 Route::get('/logout', 'Auth\LoginController@logout');
+//ゲストユーザーログイン
+Route::get('guest', 'Auth\LoginController@guestLogin')->name('login.guest');
 
 
 //ログイン中のページ
