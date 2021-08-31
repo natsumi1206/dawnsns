@@ -18,9 +18,6 @@
     </div>
 
     <div class="edit_form">
-      @if (Auth::id() == 7)
-        <p class="text-danger">※ゲストユーザーは、ユーザー名とメールアドレスを編集できません。</p>
-      @endif
       <form class="" action="{{ route('updateProfile', 'id') }}" method="post"　enctype="multipart/form-data">
         @isset ($filename)
         <div>
@@ -36,11 +33,7 @@
             USER NAME
           </label>
           <div>
-            @if (Auth::id() == 7)
-              <input class="form-control" type="text" name="username" value="{{ Auth::user()->username }}" readonly>
-            @else
-              <input class="form-control" type="text" name="username" value="{{ Auth::user()->username }}">
-            @endif
+            <input class="form-control" type="text" name="username" value="{{ Auth::user()->username }}">
             @if ($errors->has('username'))
                 <span class="help-block">
                     <strong>{{ $errors->first('username') }}</strong>
@@ -54,11 +47,7 @@
             E-MAIL
           </label>
           <div>
-            @if (Auth::id() == 7)
-              <input class="form-control" type="text" name="mail" value="{{ Auth::user()->mail }}" readonly>
-            @else
             <input class="form-control" type="text" name="mail" value="{{ Auth::user()->mail }}">
-            @endif
             @if ($errors->has('mail'))
                 <span class="help-block">
                     <strong>{{ $errors->first('mail') }}</strong>
@@ -84,11 +73,7 @@
             ICON IMAGE
           </label>
           <div>
-            @if (Auth::id() == 7)
-              <input type="file" enctype="multipart/form-data" name="images" style="display: none;">
-            @else
-              <input type="file" enctype="multipart/form-data" name="images">
-            @endif
+            <input type="file" enctype="multipart/form-data" name="images" >
             @if ($errors->has('images'))
                 <span class="help-block">
                     <strong>{{ $errors->first('images') }}</strong>
@@ -102,15 +87,6 @@
       </form>
     </div>
 
-    @if (Auth::id() == 7)
-    <div class="pass">
-      <p class="side_bar_btn" hidden>
-        <a class="side_bar_link" href="/password">
-          パスワードを変更
-        </a>
-      </p>
-    </div>
-    @else
     <div class="pass">
       <p class="side_bar_btn">
         <a class="side_bar_link" href="/password">
@@ -118,8 +94,6 @@
         </a>
       </p>
     </div>
-    @endif
-
   </div>
 
 
