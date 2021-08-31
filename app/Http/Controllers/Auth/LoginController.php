@@ -74,5 +74,17 @@ class LoginController extends Controller
       return redirect('/login');
     }
 
+    private const GUEST_USER_ID = 7;
+
+    public function guestLogin()
+    {
+       // id=1 のゲストユーザー情報がDBに存在すれば、ゲストログインする
+       if (Auth::loginUsingId(self::GUEST_USER_ID)) {
+        return redirect('/top');
+      }
+
+    return redirect('/top');
+    }
+
 
 }
