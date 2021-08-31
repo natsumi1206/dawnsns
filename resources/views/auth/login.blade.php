@@ -28,6 +28,11 @@
 </div>
 
 <div class="txt">{{ Form::submit('Login', ['class'=>'login-btn']) }}</div>
+<div class="txt">
+  <a href="{{ route('login.guest') }}" class="login-btn">
+    ゲストログイン
+  </a>
+</div>
 
 <p class="txt"><a class="" href="/register">新規ユーザーの方はこちら</a></p>
 
