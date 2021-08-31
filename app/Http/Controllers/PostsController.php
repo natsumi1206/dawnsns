@@ -77,8 +77,7 @@ class PostsController extends Controller
     //ツイート削除処理
     public function delete($id)
     {
-        \DB::connection('dawnSNS')
-            ->table('posts')
+        Post::table('posts')
             ->where('id', $id)
             ->delete();
 
